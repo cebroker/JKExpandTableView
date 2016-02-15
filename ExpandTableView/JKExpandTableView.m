@@ -90,6 +90,16 @@
     [self insertRowsAtIndexPaths:[NSArray arrayWithObject:[NSIndexPath indexPathForRow:(row + 1) inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
 }
 
+- (void) collapseParents {
+    
+    NSInteger count = [self.dataSourceDelegate numberOfParentCells];
+    
+    for (int i = 0; i < count; i++) {
+        [self collapseForParentAtRow:i];
+    }
+    
+}
+
 - (void) collapseForParentAtRow: (NSInteger) row {
     NSUInteger parentIndex = [self parentIndexForRow:row];
     

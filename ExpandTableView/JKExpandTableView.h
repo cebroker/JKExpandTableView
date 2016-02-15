@@ -140,4 +140,10 @@
 @property(nonatomic,weak,getter = getDataSourceDelegate, setter = setDataSourceDelegate:) id<JKExpandTableViewDataSource> dataSourceDelegate;
 @property(nonatomic,strong) NSMutableArray * expansionStates;
 
+
+/*
+ Collapse all the parent rows
+ */
+- (void) collapseParents;
+
 @end
